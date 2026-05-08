@@ -40,6 +40,8 @@ const SERVICES = [
     title: "Career growth / Programs",
     description: "Structured professional guidance to accelerate your career trajectory and leadership potential.",
     icon: <Briefcase className="w-6 h-6" />,
+    image: "/images/career-growth.png",
+    alt: "Career growth programs image",
     color: "bg-sage/40",
     pattern: "bg-linear-to-tr from-sage/20 to-accent/10"
   },
@@ -48,6 +50,8 @@ const SERVICES = [
     title: "Relationship guidance",
     description: "Strategic advisory for interpersonal dynamics, conflict resolution, and building strong connections.",
     icon: <Heart className="w-6 h-6" />,
+    image: "/images/relationship-guidance.png",
+    alt: "Relationship guidance image",
     color: "bg-accent/10",
     pattern: "bg-linear-to-tr from-accent/20 to-sage/10"
   },
@@ -56,6 +60,8 @@ const SERVICES = [
     title: "Consultation / Coaching session",
     description: "Personalized one-on-one advisory focused on specific challenges and immediate decision-making.",
     icon: <User className="w-6 h-6" />,
+    image: "/images/consultation-coaching.png",
+    alt: "Consultation coaching session image",
     color: "bg-sage/40",
     pattern: "bg-linear-to-tr from-secondary/10 to-accent/10"
   },
@@ -64,6 +70,8 @@ const SERVICES = [
     title: "Well-being / Peace of mind",
     description: "Holistic strategies to maintain clarity, reduce stress, and achieve professional-personal balance.",
     icon: <Brain className="w-6 h-6" />,
+    image: "/images/well-being.png",
+    alt: "Well-being peace of mind image",
     color: "bg-accent/10",
     pattern: "bg-linear-to-tr from-sage/30 to-ivory"
   }
@@ -237,33 +245,16 @@ const Hero = () => (
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
-        className="relative aspect-square"
+        className="relative aspect-[3/4] max-h-[70vh] md:max-h-none mx-auto w-full"
       >
         <div className="absolute inset-0 bg-accent/20 rounded-full blur-3xl opacity-30 animate-pulse" />
-        <div className="relative z-10 w-full h-full glass-card overflow-hidden flex items-center justify-center bg-linear-to-br from-ivory to-sage/30">
-            <div className="relative w-full h-full flex items-center justify-center">
-                <div className="absolute inset-0 opacity-10 pointer-events-none">
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" />
-                            </pattern>
-                        </defs>
-                        <rect width="100%" height="100%" fill="url(#grid)" />
-                    </svg>
-                </div>
-                <div className="text-center p-12 relative z-10">
-                    <div className="w-24 h-24 rounded-2xl border border-accent/20 flex items-center justify-center mx-auto mb-8 bg-white shadow-xl">
-                        <Shield className="w-12 h-12 text-accent" />
-                    </div>
-                    <h3 className="text-2xl font-serif text-ink mb-2">Verified Strategic Excellence</h3>
-                    <p className="text-xs text-ink/40 uppercase tracking-widest font-bold">Advisory Intelligence Tier I</p>
-                </div>
-                <div className="absolute bottom-10 right-10 flex gap-2">
-                    <div className="w-3 h-3 rounded-full bg-accent animate-ping" />
-                    <div className="w-3 h-3 rounded-full bg-accent/40" />
-                </div>
-            </div>
+        <div className="relative z-10 w-full h-full glass-card overflow-hidden shadow-2xl">
+            <img 
+              src="/images/hero.png" 
+              alt="Cardibuy Strategic Advisory" 
+              className="w-full h-full object-cover"
+              loading="eager"
+            />
         </div>
       </motion.div>
     </div>
@@ -298,18 +289,13 @@ const Services = () => (
             transition={{ delay: index * 0.1 }}
             className="glass-card flex flex-col hover:border-accent/40 group cursor-default"
           >
-            <div className={`h-48 w-full ${service.pattern} overflow-hidden rounded-t-2xl flex items-center justify-center relative`}>
-              <div className="absolute inset-0 opacity-5 pointer-events-none">
-                  <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                      <pattern id={`pattern-${index}`} width="20" height="20" patternUnits="userSpaceOnUse">
-                          <circle cx="2" cy="2" r="1" fill="currentColor" />
-                      </pattern>
-                      <rect width="100%" height="100%" fill={`url(#pattern-${index})`} />
-                  </svg>
-              </div>
-              <div className="opacity-20 group-hover:opacity-40 transition-opacity duration-500 transform group-hover:scale-110 transition-transform">
-                {React.cloneElement(service.icon as React.ReactElement, { className: "w-24 h-24" })}
-              </div>
+            <div className="h-64 w-full overflow-hidden rounded-t-2xl relative aspect-[3/4]">
+              <img 
+                src={service.image} 
+                alt={service.alt} 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+              />
+              <div className={`absolute inset-0 ${service.pattern} opacity-10 pointer-events-none`} />
             </div>
             <div className="p-8">
               <div className={`w-12 h-12 ${service.color} rounded-xl flex items-center justify-center mb-6`}>
