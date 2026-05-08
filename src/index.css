@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-secondary: var(--secondary);
+  --color-ivory: var(--bg-primary);
+  --color-sand: var(--bg-secondary);
+  --color-sage: var(--bg-tertiary);
+  --color-ink: var(--text-primary);
+  --color-ink-muted: var(--text-secondary);
+  --color-card: var(--card-bg);
+}
+
+:root {
+  --accent: #4A7C7A; /* Muted blue-green */
+  --accent-light: #6B9B99;
+  --secondary: #B89B72; /* Soft gold */
+  --bg-primary: #FDFCF8; /* ivory */
+  --bg-secondary: #F5F2EA; /* sand */
+  --bg-tertiary: #E8EFEC; /* sage */
+  --text-primary: #2D2D2D; /* ink */
+  --text-secondary: #5A5A5A;
+  --card-bg: #FFFFFF;
+  --border-opacity: 0.05;
+}
+
+@layer base {
+  body {
+    @apply bg-ivory text-ink antialiased selection:bg-accent/20 transition-colors duration-500;
+    font-size: 15px;
+    line-height: 1.6;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+.glass-card {
+  @apply border rounded-2xl transition-all duration-500 shadow-sm hover:shadow-md;
+  background-color: var(--card-bg);
+  border-color: rgba(45, 45, 45, var(--border-opacity));
+}
+
+.section-padding {
+  @apply py-20 md:py-32 px-6 md:px-12 lg:px-24;
+}
+
+.nav-link {
+  @apply text-[11px] font-semibold text-ink/60 hover:text-accent transition-all duration-300 uppercase tracking-[0.2em];
+}
+
+.btn-primary {
+  @apply px-9 py-4.5 bg-accent text-white rounded-xl font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-accent-light transition-all duration-500 flex items-center justify-center gap-3 shadow-lg shadow-accent/10;
+}
+
+.btn-secondary {
+  @apply px-9 py-4.5 border border-accent/20 text-accent rounded-xl font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-accent hover:text-white transition-all duration-500 flex items-center justify-center;
+}
