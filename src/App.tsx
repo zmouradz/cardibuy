@@ -527,14 +527,14 @@ const Policies = () => {
   };
 
   return (
-    <section id="policies" className="section-padding bg-ivory/20 overflow-hidden relative border-t border-ink/5 font-sans">
-      <div className="absolute inset-0 bg-sage/5 -z-10" />
+    <section id="policies" className="section-padding bg-[#F9FBFB] overflow-hidden relative border-t border-[#DDE4E1] font-sans pb-32">
+      <div className="absolute inset-0 bg-[#5F8E8D]/2 -z-10" />
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20 animate-fade-in">
-          <span className="text-accent text-[10px] font-bold uppercase tracking-[0.4em] block mb-5">Corporate Standards</span>
-          <h2 className="text-3xl md:text-5xl font-serif font-medium text-ink leading-tight tracking-tight">Policies & Compliance</h2>
-          <div className="h-px bg-accent/30 mt-8 w-16 mx-auto mb-6" />
-          <p className="text-sm md:text-base text-ink-muted max-w-2xl mx-auto leading-relaxed font-sans">
+          <span className="text-[#5F8E8D] text-[10px] font-bold uppercase tracking-[0.4em] block mb-5">Corporate Standards</span>
+          <h2 className="text-3xl md:text-5xl font-serif font-normal text-[#1E1E1E] leading-tight tracking-tight">Policies & Compliance</h2>
+          <div className="h-px bg-[#5F8E8D]/30 mt-8 w-16 mx-auto mb-6" />
+          <p className="text-[16px] text-[#4A4A4A] max-w-2xl mx-auto leading-[1.8] font-sans font-normal">
             Cardibuy operates under strict professional standards and transparent protocols to guide and support your personal and professional journey.
           </p>
         </div>
@@ -543,77 +543,77 @@ const Policies = () => {
           {/* LEFT SIDEBAR CONTROLS */}
           <div className="lg:col-span-4 lg:sticky lg:top-28 space-y-6">
             {/* Mobile / Tablet Horizontal Navigation Scrollbar */}
-            <div className="lg:hidden flex gap-2 overflow-x-auto pb-4 mb-4 -mx-6 px-6 scrollbar-none border-b border-ink/5">
+            <div className="lg:hidden flex gap-2 overflow-x-auto pb-4 mb-4 -mx-6 px-6 scrollbar-none border-b border-[#DDE4E1]/50">
               {policyLinks.map((link) => (
                 <button
                   key={link.id}
                   onClick={() => handleScrollToSec(link.id)}
-                  className="whitespace-nowrap flex items-center gap-2 py-2 px-4 rounded-full border border-ink/5 bg-white text-[11px] text-ink-muted hover:text-accent hover:border-accent/40 font-semibold transition-all duration-300 shrink-0 shadow-xs"
+                  className="whitespace-nowrap flex items-center gap-2 py-2.5 px-4 rounded-full border border-[#DDE4E1] bg-white text-[11px] text-[#4A4A4A] hover:text-[#5F8E8D] hover:border-[#5F8E8D]/40 font-semibold transition-all duration-300 shrink-0 shadow-sm"
                 >
-                  <span className="font-mono text-[9px] text-accent/60 font-semibold">{link.secNum}</span>
+                  <span className="font-mono text-[9px] text-[#5F8E8D]/60 font-semibold">{link.secNum}</span>
                   <span>{link.label}</span>
                 </button>
               ))}
             </div>
 
             {/* Desktop Table of Contents */}
-            <div className="hidden lg:flex flex-col gap-1 p-6 bg-white border border-ink/5 rounded-2xl shadow-xs">
-              <p className="text-[10px] font-bold text-accent uppercase tracking-[0.2em] mb-4 pl-3">On This Page</p>
+            <div className="hidden lg:flex flex-col gap-1 p-6 bg-white border border-[#DDE4E1] rounded-[20px] shadow-sm">
+              <p className="text-[10px] font-bold text-[#5F8E8D] uppercase tracking-[0.2em] mb-4 pl-3">On This Page</p>
               {policyLinks.map((link) => (
                 <button
                   key={link.id}
                   onClick={() => handleScrollToSec(link.id)}
-                  className="flex items-center gap-3 text-left py-2 px-3 rounded-xl hover:bg-accent/5 text-xs text-ink-muted hover:text-accent font-medium transition-all duration-200 group"
+                  className="flex items-center gap-3 text-left py-2.5 px-3 rounded-xl hover:bg-[#5F8E8D]/5 text-xs text-[#4A4A4A] hover:text-[#5F8E8D] font-medium transition-all duration-200 group"
                 >
-                  <span className="font-mono text-[9px] text-accent/40 group-hover:text-accent tracking-wider font-semibold">{link.secNum}</span>
+                  <span className="font-mono text-[9px] text-[#5F8E8D]/40 group-hover:text-[#5F8E8D] tracking-wider font-semibold">{link.secNum}</span>
                   <span className="font-sans font-medium">{link.label}</span>
                 </button>
               ))}
             </div>
 
             {/* Merchants and compliance indicators card */}
-            <div className="glass-card p-6 md:p-8 bg-white/90 backdrop-blur-md border border-ink/5 shadow-xs flex flex-col gap-6">
+            <div className="p-6 md:p-8 bg-white border border-[#DDE4E1] rounded-[20px] shadow-sm flex flex-col gap-6">
               <div>
-                <span className="text-[10px] uppercase tracking-widest text-accent font-bold block mb-2">Compliance Review</span>
-                <h3 className="text-xl font-serif text-ink font-medium leading-snug">Merchant & User Transparency</h3>
-                <p className="text-xs text-ink-muted leading-relaxed mt-3 font-sans">
-                  Our comprehensive policies are structured to fulfill the compliance requirements of global payment partners, merchant processors, and financial institutions (Stripe, PayPal, etc.).
+                <span className="text-[10px] uppercase tracking-widest text-[#5F8E8D] font-bold block mb-2">Compliance Review</span>
+                <h3 className="text-xl font-serif text-[#1E1E1E] font-normal leading-snug">Merchant & User Transparency</h3>
+                <p className="text-xs text-[#4A4A4A] leading-relaxed mt-3 font-sans">
+                  Our comprehensive policies are structured to fulfill the compliance requirements of global payment partners, merchant processors, and financial institutions.
                 </p>
               </div>
               
-              <div className="h-px bg-ink/5" />
+              <div className="h-px bg-[#DDE4E1]" />
 
               <div className="space-y-4">
-                <span className="text-[10px] font-bold text-accent uppercase tracking-wider block mb-1">Key Specifications</span>
+                <span className="text-[10px] font-bold text-[#5F8E8D] uppercase tracking-wider block mb-1">Key Specifications</span>
                 <div className="grid grid-cols-2 gap-3 text-[11px] leading-snug">
-                  <div className="p-3 bg-sage/10 rounded-xl border border-accent/5 space-y-1">
-                    <span className="text-ink-muted/80 block text-[9px] uppercase tracking-wider font-semibold">Refund Window</span>
-                    <span className="text-accent font-semibold block">120 Days Limit</span>
+                  <div className="p-3 bg-[#5F8E8D]/5 rounded-xl border border-[#DDE4E1]/30 space-y-1">
+                    <span className="text-[#4A4A4A]/80 block text-[9px] uppercase tracking-wider font-semibold font-sans">Refund Window</span>
+                    <span className="text-[#5F8E8D] font-semibold block font-sans">120 Days Limit</span>
                   </div>
-                  <div className="p-3 bg-sage/10 rounded-xl border border-accent/5 space-y-1">
-                    <span className="text-ink-muted/80 block text-[9px] uppercase tracking-wider font-semibold">Requirement</span>
-                    <span className="text-accent font-semibold block">18+ Age Limit</span>
+                  <div className="p-3 bg-[#5F8E8D]/5 rounded-xl border border-[#DDE4E1]/30 space-y-1">
+                    <span className="text-[#4A4A4A]/80 block text-[9px] uppercase tracking-wider font-semibold font-sans">Requirement</span>
+                    <span className="text-[#5F8E8D] font-semibold block font-sans">18+ Age Limit</span>
                   </div>
-                  <div className="p-3 bg-sage/10 rounded-xl border border-accent/5 space-y-1">
-                    <span className="text-ink-muted/80 block text-[9px] uppercase tracking-wider font-semibold">Last Audit</span>
-                    <span className="text-accent font-semibold block">June 2026</span>
+                  <div className="p-3 bg-[#5F8E8D]/5 rounded-xl border border-[#DDE4E1]/30 space-y-1">
+                    <span className="text-[#4A4A4A]/80 block text-[9px] uppercase tracking-wider font-semibold font-sans">Last Audit</span>
+                    <span className="text-[#5F8E8D] font-semibold block font-sans">June 2026</span>
                   </div>
-                  <div className="p-3 bg-sage/10 rounded-xl border border-accent/5 space-y-1">
-                    <span className="text-ink-muted/80 block text-[9px] uppercase tracking-wider font-semibold">Advisory Tier</span>
-                    <span className="text-accent font-semibold block">Self-Development</span>
+                  <div className="p-3 bg-[#5F8E8D]/5 rounded-xl border border-[#DDE4E1]/30 space-y-1">
+                    <span className="text-[#4A4A4A]/80 block text-[9px] uppercase tracking-wider font-semibold font-sans">Advisory Tier</span>
+                    <span className="text-[#5F8E8D] font-semibold block font-sans">Self-Development</span>
                   </div>
                 </div>
               </div>
 
-              <div className="h-px bg-ink/5" />
+              <div className="h-px bg-[#DDE4E1]" />
 
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
-                  <Shield className="w-4 h-4 text-accent" />
+                <div className="w-8 h-8 rounded-full bg-[#5F8E8D]/10 flex items-center justify-center">
+                  <Shield className="w-4 h-4 text-[#5F8E8D]" />
                 </div>
                 <div>
-                  <span className="text-[9px] text-ink-muted block uppercase tracking-wider font-semibold">Compliance Status</span>
-                  <span className="text-xs text-accent font-semibold">Audited & Approved</span>
+                  <span className="text-[9px] text-[#4A4A4A] block uppercase tracking-wider font-semibold font-sans">Compliance Status</span>
+                  <span className="text-xs text-[#5F8E8D] font-semibold font-sans">Audited & Approved</span>
                 </div>
               </div>
             </div>
@@ -622,456 +622,275 @@ const Policies = () => {
           {/* MAIN COMPLIANCE CONTENT CARDS */}
           <div className="lg:col-span-8 space-y-8">
             
-            {/* SECTION 1 */}
+            {/* SECTION 1: Purpose & Scope */}
             <motion.div 
               id="sec-1"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-8 md:p-10 rounded-2xl border border-ink/5 bg-white shadow-xs relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300"
+              className="p-8 md:p-10 rounded-[20px] border border-[#DDE4E1] bg-white shadow-sm relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300 animate-fade-in"
             >
-              <div className="absolute top-0 left-0 w-1 h-full bg-accent" />
+              <div className="absolute top-0 left-0 w-1.5 h-full bg-[#5F8E8D]" />
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                  <Scale className="w-6 h-6 text-accent" />
+                <div className="w-12 h-12 rounded-xl bg-[#5F8E8D]/10 flex items-center justify-center shrink-0">
+                  <Scale className="w-6 h-6 text-[#5F8E8D]" />
                 </div>
                 <div>
-                  <span className="text-[9px] font-mono font-bold uppercase tracking-[0.2em] text-accent">Section 01 / Purpose & Scope</span>
-                  <h3 className="text-xl md:text-2xl font-serif font-medium text-ink mt-1">Providing Structured Guidance to Support Personal Growth</h3>
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#5F8E8D]">Section 01 / Purpose & Scope</span>
+                  <h3 className="text-xl md:text-2xl font-serif font-normal text-[#1E1E1E] mt-1">CARDIBUY LTD – Website Policies & Service Information</h3>
                 </div>
               </div>
-              <div className="space-y-4 text-sm text-ink-muted leading-relaxed font-sans pl-1">
-                <p>Cardibuy provides digital guidance and consultation services focused on personal development, relationship guidance, emotional support, and lifestyle insight.</p>
-                <p>Our services are designed to provide structured one-on-one conversations, supportive guidance, and practical perspectives tailored to each client’s personal journey.</p>
-                
-                <div className="p-5 rounded-xl bg-sage/10 border border-accent/10 mt-4 leading-relaxed font-sans text-xs italic text-ink/90 shadow-2xs">
-                  All services are provided for informational and self-development purposes only and should not be considered medical, legal, financial, or psychological advice. We do not guarantee specific outcomes or results from the use of our services.
+              
+              <div className="space-y-4 text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.8] font-sans font-normal pl-1">
+                <div className="border-l-2 border-[#5F8E8D] pl-4 italic text-[#5F8E8D] font-serif text-[17px] sm:text-[18px] leading-relaxed my-2">
+                  Providing Structured Guidance to Support Personal Growth
                 </div>
+                <p>Cardibuy provides digital guidance and consultation services focused on personal development, relationship guidance, emotional support, and lifestyle insight. Our services are designed to provide structured one-on-one conversations, supportive guidance, and practical perspectives tailored to each client’s personal journey.</p>
+                <p>All services are provided for informational and self-development purposes only and should not be considered medical, legal, financial, or psychological advice. We do not guarantee specific outcomes or results from the use of our services.</p>
               </div>
             </motion.div>
 
-            {/* SECTION 2 */}
+            {/* SECTION 2: Outcome Disclaimer */}
             <motion.div 
               id="sec-2"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-8 md:p-10 rounded-2xl border border-ink/5 bg-white shadow-xs relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300"
+              className="p-8 md:p-10 rounded-[20px] border border-[#DDE4E1] bg-white shadow-sm relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300"
             >
-              <div className="absolute top-0 left-0 w-1 h-full bg-accent" />
+              <div className="absolute top-0 left-0 w-1.5 h-full bg-[#5F8E8D]" />
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                  <Shield className="w-6 h-6 text-accent" />
+                <div className="w-12 h-12 rounded-xl bg-[#5F8E8D]/10 flex items-center justify-center shrink-0">
+                  <Shield className="w-6 h-6 text-[#5F8E8D]" />
                 </div>
                 <div>
-                  <span className="text-[9px] font-mono font-bold uppercase tracking-[0.2em] text-accent">Section 02 / Disclaimers</span>
-                  <h3 className="text-xl md:text-2xl font-serif font-medium text-ink mt-1">Outcome Disclaimer</h3>
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#5F8E8D]">Section 02 / Disclaimers</span>
+                  <h3 className="text-xl md:text-2xl font-serif font-normal text-[#1E1E1E] mt-1">Outcome Disclaimer</h3>
                 </div>
               </div>
-              <div className="space-y-4 text-sm text-ink-muted leading-relaxed font-sans pl-1">
-                <p>All services are delivered as professional consulting and guidance. We do not guarantee specific outcomes, as results depend on individual circumstances, personal commitment, and external factors beyond our control.</p>
+              <div className="space-y-4 text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.8] font-sans font-normal pl-1">
+                <p>Outcome Disclaimer: All services are delivered as professional guidance and consultation services. We do not guarantee specific outcomes or results, as outcomes may vary depending on individual circumstances, personal commitment, communication, and external factors beyond our reasonable control.</p>
               </div>
             </motion.div>
 
-            {/* SECTION 3 */}
+            {/* SECTION 3: Who We Support */}
             <motion.div 
               id="sec-3"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-8 md:p-10 rounded-2xl border border-ink/5 bg-white shadow-xs relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300"
+              className="p-8 md:p-10 rounded-[20px] border border-[#DDE4E1] bg-white shadow-sm relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300"
             >
-              <div className="absolute top-0 left-0 w-1 h-full bg-accent" />
+              <div className="absolute top-0 left-0 w-1.5 h-full bg-[#5F8E8D]" />
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                  <User className="w-6 h-6 text-accent" />
+                <div className="w-12 h-12 rounded-xl bg-[#5F8E8D]/10 flex items-center justify-center shrink-0">
+                  <User className="w-6 h-6 text-[#5F8E8D]" />
                 </div>
                 <div>
-                  <span className="text-[9px] font-mono font-bold uppercase tracking-[0.2em] text-accent">Section 03 / Audience</span>
-                  <h3 className="text-xl md:text-2xl font-serif font-medium text-ink mt-1">Who We Support</h3>
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#5F8E8D]">Section 03 / Audience</span>
+                  <h3 className="text-xl md:text-2xl font-serif font-normal text-[#1E1E1E] mt-1">Who We Support</h3>
                 </div>
               </div>
-              <div className="space-y-4 text-sm text-ink-muted leading-relaxed font-sans pl-1">
-                <p>We support individuals seeking clarity in personal matters, relationship guidance, emotional support, and personal development.</p>
-                <p>Our services are designed to provide structured conversations, practical insight, and supportive guidance tailored to each client’s personal journey.</p>
+              <div className="space-y-4 text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.8] font-sans font-normal pl-1">
+                <p>We support individuals seeking clarity in personal matters, relationship guidance, emotional support, and personal development. Our services are designed to provide structured conversations, practical insight, and supportive guidance tailored to each client’s personal journey.</p>
               </div>
             </motion.div>
 
-            {/* SECTION 4 */}
+            {/* SECTION 4: Refund & Cancellation */}
             <motion.div 
               id="sec-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-8 md:p-10 rounded-2xl border border-ink/5 bg-white shadow-xs relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300"
+              className="p-8 md:p-10 rounded-[20px] border border-[#DDE4E1] bg-white shadow-sm relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300"
             >
-              <div className="absolute top-0 left-0 w-1 h-full bg-accent" />
+              <div className="absolute top-0 left-0 w-1.5 h-full bg-[#5F8E8D]" />
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                  <ShieldCheck className="w-6 h-6 text-accent" />
+                <div className="w-12 h-12 rounded-xl bg-[#5F8E8D]/10 flex items-center justify-center shrink-0">
+                  <ShieldCheck className="w-6 h-6 text-[#5F8E8D]" />
                 </div>
                 <div>
-                  <span className="text-[9px] font-mono font-bold uppercase tracking-[0.2em] text-accent">Section 04 / Cancellation</span>
-                  <h3 className="text-xl md:text-2xl font-serif font-medium text-ink mt-1">Refund & Cancellation Policy</h3>
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#5F8E8D]">Section 04 / Cancellation</span>
+                  <h3 className="text-xl md:text-2xl font-serif font-normal text-[#1E1E1E] mt-1">Refund & Cancellation Policy</h3>
                 </div>
               </div>
-              <div className="space-y-6 text-sm text-ink-muted leading-relaxed font-sans pl-1">
+              <div className="space-y-6 text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.8] font-sans font-normal pl-1">
                 <p>At Cardibuy, we are committed to maintaining a fair, transparent, and secure experience for all clients using our digital guidance and consultation services.</p>
+                <p>Clients may submit a refund request within 120 days from the original payment date. Refund requests submitted after 120 days from the payment confirmation date are generally not eligible for review or refund consideration due to service completion timelines, operational limitations, record retention policies, and payment processing regulations.</p>
+                <p>All refund requests are reviewed individually on a case-by-case basis and are not automatically approved. To help us investigate and process a request, clients may be asked to provide:</p>
                 
-                <div className="p-6 bg-accent/5 rounded-xl border border-accent/15 text-xs text-ink leading-relaxed flex items-start gap-4 my-4 shadow-2xs">
-                  <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                  <div>
-                    <span className="text-[10px] font-bold text-accent uppercase tracking-wider block mb-2 font-mono">120-Day Refund window Limit</span>
-                    <p className="font-semibold text-accent leading-relaxed">
-                      Clients may submit a refund request within 120 days from the original payment date.
-                    </p>
-                    <p className="mt-2 text-ink-muted leading-relaxed font-normal">
-                      Refund requests submitted after 120 days from the payment confirmation date are generally not eligible for review or refund consideration due to service completion timelines, operational limitations, record retention policies, and payment processing regulations.
-                    </p>
-                  </div>
-                </div>
+                <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3 pl-1">
+                  {[
+                    "Full name",
+                    "Email address",
+                    "Phone number",
+                    "Proof of payment or transaction receipt",
+                    "Date of purchase",
+                    "Description of the issue or concern"
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-2.5 text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.6]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#5F8E8D]/80 shrink-0 mt-2.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
 
-                <p>All refund requests are reviewed individually on a case-by-case basis and are not automatically approved.</p>
-                
-                <div className="h-px bg-ink/5" />
+                <p>For security and verification purposes, clients may also be asked to confirm their payment information, email address, and phone number following a completed transaction.</p>
+                <p>Refund requests may be considered in situations involving:</p>
 
-                <div className="space-y-3">
-                  <p className="font-bold text-ink text-xs font-mono uppercase tracking-wider text-accent">Clients may be asked to provide:</p>
-                  <ul className="grid sm:grid-cols-2 gap-3 pl-1">
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent/50 shrink-0" />
-                      <span>Full name</span>
+                <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3 pl-1">
+                  {[
+                    "Duplicate transactions",
+                    "Unauthorized charges",
+                    "Technical issues affecting service delivery",
+                    "Failure to receive the purchased service",
+                    "Verified billing errors"
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-2.5 text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.6]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#5F8E8D]/80 shrink-0 mt-2.5" />
+                      <span>{item}</span>
                     </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent/50 shrink-0" />
-                      <span>Email address</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent/50 shrink-0" />
-                      <span>Phone number</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent/50 shrink-0" />
-                      <span>Proof of payment or transaction receipt</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent/50 shrink-0" />
-                      <span>Date of purchase</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent/50 shrink-0" />
-                      <span>Description of the issue or concern</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="h-px bg-ink/5" />
-
-                <div className="space-y-3">
-                  <p className="font-bold text-ink text-xs font-mono uppercase tracking-wider text-accent">Refund requests may be considered in situations involving:</p>
-                  <ul className="grid sm:grid-cols-2 gap-3 pl-1">
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent/50 shrink-0" />
-                      <span>Duplicate transactions</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent/50 shrink-0" />
-                      <span>Unauthorized charges</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent/50 shrink-0" />
-                      <span>Technical issues affecting service delivery</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent/50 shrink-0" />
-                      <span>Failure to receive the purchased service</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent/50 shrink-0" />
-                      <span>Verified billing errors</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="h-px bg-ink/5" />
+                  ))}
+                </ul>
 
                 <p>Due to the nature of digital consultation and guidance services, refunds are generally not provided once a service has been delivered, initiated, completed, or confirmed by the client as satisfactory.</p>
+                <p>Cardibuy reserves the right to deny refund requests in cases where there is evidence of:</p>
 
-                <div className="space-y-3 p-5 bg-sand/40 border border-ink/5 rounded-xl">
-                  <p className="font-bold text-ink text-xs font-mono uppercase tracking-wider text-red-700/80">Cardibuy reserves the right to deny refund requests in cases where there is evidence of:</p>
-                  <ul className="grid sm:grid-cols-2 gap-3 pl-1">
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-red-600/30 shrink-0" />
-                      <span>Service usage or completed delivery</span>
+                <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3 pl-1">
+                  {[
+                    "Service usage or completed delivery",
+                    "Client confirmation of satisfaction with the service",
+                    "Repeated or abusive refund requests",
+                    "Chargeback misuse or fraudulent activity",
+                    "Attempts to obtain services without valid payment intention"
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-2.5 text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.6]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#5F8E8D]/80 shrink-0 mt-2.5" />
+                      <span>{item}</span>
                     </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-red-600/30 shrink-0" />
-                      <span>Client confirmation of satisfaction</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-red-600/30 shrink-0" />
-                      <span>Repeated or abusive refund requests</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-red-600/30 shrink-0" />
-                      <span>Chargeback misuse</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-red-600/30 shrink-0" />
-                      <span>Fraudulent activity</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-red-600/30 shrink-0" />
-                      <span>Attempts to obtain services without valid payment intention</span>
-                    </li>
-                  </ul>
-                </div>
+                  ))}
+                </ul>
 
-                <div className="p-5 bg-ivory border border-ink/10 rounded-xl leading-relaxed shadow-3xs mt-4">
-                  <p className="font-bold text-ink text-xs uppercase tracking-wider font-mono text-accent mb-1">Dispute Resolution Protocol</p>
-                  <p className="text-xs text-ink-muted leading-relaxed">
-                    Clients are encouraged to contact support before initiating any chargeback or payment dispute.
-                  </p>
-                  <p className="mt-3 text-[10px] uppercase tracking-wider font-bold text-accent">
-                    By purchasing our services, clients acknowledge and agree to this Refund & Cancellation Policy.
-                  </p>
-                </div>
+                <p>Clients are encouraged to contact our support team directly before initiating a payment dispute or chargeback so that we may review the matter and attempt to provide an appropriate resolution.</p>
+                <p>By purchasing our services, clients acknowledge and agree to this Refund & Cancellation Policy.</p>
               </div>
             </motion.div>
 
-            {/* SECTION 5 */}
+            {/* SECTION 5: Service Delivery Policy */}
             <motion.div 
               id="sec-5"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-8 md:p-10 rounded-2xl border border-ink/5 bg-white shadow-xs relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300"
+              className="p-8 md:p-10 rounded-[20px] border border-[#DDE4E1] bg-white shadow-sm relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300"
             >
-              <div className="absolute top-0 left-0 w-1 h-full bg-accent" />
+              <div className="absolute top-0 left-0 w-1.5 h-full bg-[#5F8E8D]" />
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                  <Clock className="w-6 h-6 text-accent" />
+                <div className="w-12 h-12 rounded-xl bg-[#5F8E8D]/10 flex items-center justify-center shrink-0">
+                  <Clock className="w-6 h-6 text-[#5F8E8D]" />
                 </div>
                 <div>
-                  <span className="text-[9px] font-mono font-bold uppercase tracking-[0.2em] text-accent">Section 05 / Logistics</span>
-                  <h3 className="text-xl md:text-2xl font-serif font-medium text-ink mt-1">Service Delivery Policy</h3>
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#5F8E8D]">Section 05 / Logistics</span>
+                  <h3 className="text-xl md:text-2xl font-serif font-normal text-[#1E1E1E] mt-1">Service Delivery Policy</h3>
                 </div>
               </div>
-              <div className="space-y-6 text-sm text-ink-muted leading-relaxed font-sans pl-1">
-                <p>Cardibuy provides digital guidance and consultation services through secure online communication platforms and scheduled service arrangements.</p>
-                
-                <div className="space-y-3 p-5 bg-sage/5 border border-accent/10 rounded-xl">
-                  <p className="font-bold text-ink text-xs font-mono uppercase tracking-wider text-accent">Following successful payment, clients may be contacted to confirm:</p>
-                  <ul className="grid sm:grid-cols-2 gap-3 pl-1">
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent/60 shrink-0" />
-                      <span>Booking details</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent/60 shrink-0" />
-                      <span>Email address</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent/60 shrink-0" />
-                      <span>Phone number</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent/60 shrink-0" />
-                      <span>Preferred communication method</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent/60 shrink-0" />
-                      <span>Service information</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <p>Service delivery timelines may vary depending on scheduling availability, client responsiveness, time zone differences, technical factors, and service complexity. Clients are responsible for providing accurate contact information.</p>
-
-                <div className="p-5 bg-sage/10 rounded-xl border border-accent/10 leading-relaxed">
-                  <p className="font-bold text-accent text-xs font-mono uppercase tracking-wider mb-2">Professional Boundary Specifications</p>
-                  <p className="text-xs text-ink-muted leading-relaxed">
-                    All services are intended for informational and personal development purposes only. Guidance provided should not be interpreted as medical, legal, financial, psychological, or crisis-related advice. Clients remain fully responsible for their personal choices, actions, interpretations, and outcomes.
-                  </p>
-                  <p className="mt-3 text-xs italic font-semibold text-ink/90">
-                    Cardibuy does not guarantee specific personal, emotional, relationship, or life outcomes resulting from consultations.
-                  </p>
-                </div>
-
-                <div className="h-px bg-ink/5" />
-
-                <div className="space-y-3">
-                  <p className="font-bold text-ink text-xs font-mono uppercase tracking-wider text-accent">A service may be considered delivered once:</p>
-                  <ul className="grid sm:grid-cols-2 gap-3 pl-1">
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent/50 shrink-0" />
-                      <span>A session has started</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent/50 shrink-0" />
-                      <span>Communication has been initiated</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent/50 shrink-0" />
-                      <span>Guidance has been provided</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent/50 shrink-0" />
-                      <span>Digital content has been shared</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent/50 shrink-0" />
-                      <span>The client has participated in the scheduled consultation</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="h-px bg-ink/5" />
-
-                <div className="space-y-3 p-5 bg-red-500/5 rounded-xl border border-red-500/10">
-                  <p className="font-bold text-red-700 text-xs font-mono uppercase tracking-wider">Cardibuy reserves the right to suspend or terminate services involving:</p>
-                  <ul className="grid sm:grid-cols-2 gap-3 pl-1">
-                    <li className="flex items-center gap-2.5 text-xs text-red-800">
-                      <span className="w-1.5 h-1.5 rounded-full bg-red-600/30 shrink-0" />
-                      <span>Abusive behavior</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-red-800">
-                      <span className="w-1.5 h-1.5 rounded-full bg-red-600/30 shrink-0" />
-                      <span>Harassment</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-red-800">
-                      <span className="w-1.5 h-1.5 rounded-full bg-red-600/30 shrink-0" />
-                      <span>Fraudulent activity</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-red-800">
-                      <span className="w-1.5 h-1.5 rounded-full bg-red-600/30 shrink-0" />
-                      <span>Repeated payment disputes</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-red-800">
-                      <span className="w-1.5 h-1.5 rounded-full bg-red-600/30 shrink-0" />
-                      <span>Policy violations</span>
-                    </li>
-                  </ul>
-                </div>
+              <div className="space-y-6 text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.8] font-sans font-normal pl-1">
+                <p>Cardibuy provides digital guidance and consultation services through secure online communication platforms and, where applicable, through scheduled service arrangements.</p>
+                <p>Following a successful payment, clients may be contacted to confirm their booking details, email address, phone number, preferred communication method, and service information before the consultation is scheduled or delivered.</p>
+                <p>Service delivery timelines may vary depending on scheduling availability, client responsiveness, time zone differences, technical factors, or the nature of the requested service. Clients are responsible for providing accurate contact information and responding to scheduling or verification requests in a timely manner.</p>
+                <p>All services provided by Cardibuy are intended for informational and personal development purposes only. Our guidance, perspectives, and support services should not be interpreted as medical, legal, financial, psychological, or crisis-related advice. Clients remain fully responsible for their personal choices, actions, interpretations, and outcomes following the use of our services.</p>
+                <p>Cardibuy does not guarantee specific personal, emotional, relationship, or life outcomes resulting from any consultation, guidance session, or support service.</p>
+                <p>Due to the nature of digital consultation services, a service may be considered delivered once a session has started, communication has been initiated, guidance has been provided, digital content has been shared, or the client has participated in the scheduled consultation.</p>
+                <p>Clients are expected to communicate respectfully and professionally during all interactions with our team. Cardibuy reserves the right to refuse, suspend, or terminate services in cases involving abusive behavior, harassment, fraudulent activity, repeated payment disputes, or violations of our policies.</p>
               </div>
             </motion.div>
 
-            {/* SECTION 6 */}
+            {/* SECTION 6: Confidentiality, Privacy & Client Safety */}
             <motion.div 
               id="sec-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-8 md:p-10 rounded-2xl border border-ink/5 bg-white shadow-xs relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300"
+              className="p-8 md:p-10 rounded-[20px] border border-[#DDE4E1] bg-white shadow-sm relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300"
             >
-              <div className="absolute top-0 left-0 w-1 h-full bg-accent" />
+              <div className="absolute top-0 left-0 w-1.5 h-full bg-[#5F8E8D]" />
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                  <Heart className="w-6 h-6 text-accent" />
+                <div className="w-12 h-12 rounded-xl bg-[#5F8E8D]/10 flex items-center justify-center shrink-0">
+                  <Heart className="w-6 h-6 text-[#5F8E8D]" />
                 </div>
                 <div>
-                  <span className="text-[9px] font-mono font-bold uppercase tracking-[0.2em] text-accent">Section 06 / Privacy</span>
-                  <h3 className="text-xl md:text-2xl font-serif font-medium text-ink mt-1">Confidentiality, Privacy & Client Safety</h3>
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#5F8E8D]">Section 06 / Privacy</span>
+                  <h3 className="text-xl md:text-2xl font-serif font-normal text-[#1E1E1E] mt-1">Confidentiality, Privacy & Client Safety</h3>
                 </div>
               </div>
-              <div className="space-y-6 text-sm text-ink-muted leading-relaxed font-sans pl-1">
-                <p>Cardibuy takes reasonable measures to protect client information and private communications.</p>
-                <p>Clients acknowledge that communications may occur through third-party platforms, email services, messaging systems, or online communication tools outside Cardibuy's direct control.</p>
+              <div className="space-y-6 text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.8] font-sans font-normal pl-1">
+                <p>Cardibuy takes reasonable measures to protect client information and private communications. By using our services, clients acknowledge and agree that communications and service-related interactions may occur through third-party digital platforms, email services, messaging systems, or other online communication tools that are outside of Cardibuy’s direct control.</p>
+                <p>While we make reasonable efforts to maintain privacy and data security, Cardibuy cannot guarantee absolute protection against technical failures, unauthorized access, cyber incidents, or third-party platform vulnerabilities.</p>
+                <p>For security, compliance, quality assurance, dispute resolution, fraud prevention, and operational purposes, certain communications, scheduling details, payment confirmations, and service-related records may be retained in accordance with applicable legal and operational requirements.</p>
+                <p>Clients must be at least 18 years of age or the legal age of majority in their jurisdiction to purchase or use Cardibuy services. By accessing, booking, or using our services, clients confirm that they meet the applicable legal age requirements and are legally authorized to enter into binding agreements and complete online payments.</p>
                 
-                <div className="p-5 bg-sage/5 rounded-xl border border-accent/10 flex flex-col gap-3">
-                  <p className="font-bold text-accent text-xs font-mono uppercase tracking-wider">Platform & Communications Disclaimer:</p>
-                  <p className="text-xs text-ink-muted leading-relaxed">
-                    While reasonable efforts are made to maintain privacy and security, Cardibuy cannot guarantee absolute protection against:
-                  </p>
-                  <ul className="grid sm:grid-cols-2 gap-2 pl-1">
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.2 h-1.2 rounded-full bg-accent" />
-                      <span>Technical failures</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.2 h-1.2 rounded-full bg-accent" />
-                      <span>Unauthorized access</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.2 h-1.2 rounded-full bg-accent" />
-                      <span>Cyber incidents</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-xs text-ink-muted">
-                      <span className="w-1.2 h-1.2 rounded-full bg-accent" />
-                      <span>Third-party platform vulnerabilities</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <p>For compliance, dispute resolution, fraud prevention, quality assurance, and operational purposes, certain communications and service records may be retained.</p>
-
-                <p>Clients must be at least 18 years old or the legal age of majority in their jurisdiction to use Cardibuy services. By booking or using services, clients confirm they meet the applicable legal age requirements.</p>
-
-                <div className="border border-rose-500/15 bg-rose-50/20 p-6 rounded-xl flex items-start gap-4">
-                  <ShieldCheck className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" />
+                <div className="border border-[#DDE4E1] bg-[#5F8E8D]/5 p-6 rounded-[16px] flex items-start gap-4">
+                  <ShieldCheck className="w-5 h-5 text-[#5F8E8D] shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-semibold text-rose-800 block mb-2 text-sm flex items-center gap-1.5">
+                    <span className="font-semibold text-[#1E1E1E] block mb-2 text-sm uppercase tracking-wider font-sans">
                       Critical Boundary Notice — No Crisis Support
                     </span>
-                    <p className="text-rose-950 font-bold text-xs leading-relaxed">
-                      Cardibuy services are not intended for: crisis intervention, emergency situations, licensed medical treatment, or psychological treatment services.
-                    </p>
-                    <p className="mt-2 text-ink-muted text-xs leading-relaxed">
-                      Individuals experiencing serious medical, psychological, or emergency situations should seek assistance from qualified professionals or local emergency services.
+                    <p className="text-[#4A4A4A] text-xs leading-relaxed font-sans">
+                      Our services are not intended for crisis intervention, emergency situations, or licensed medical or psychological treatment services. Clients experiencing serious medical, psychological, or emergency situations should seek assistance from qualified professionals or appropriate local services.
                     </p>
                   </div>
                 </div>
               </div>
             </motion.div>
 
-            {/* SECTION 7 */}
+            {/* SECTION 7: Contact & Support */}
             <motion.div 
               id="sec-7"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-8 md:p-10 rounded-2xl border border-ink/5 bg-white shadow-xs relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300"
+              className="p-8 md:p-10 rounded-[20px] border border-[#DDE4E1] bg-white shadow-sm relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300"
             >
-              <div className="absolute top-0 left-0 w-1 h-full bg-accent" />
+              <div className="absolute top-0 left-0 w-1.5 h-full bg-[#5F8E8D]" />
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                  <Mail className="w-6 h-6 text-accent" />
+                <div className="w-12 h-12 rounded-xl bg-[#5F8E8D]/10 flex items-center justify-center shrink-0">
+                  <Mail className="w-6 h-6 text-[#5F8E8D]" />
                 </div>
                 <div>
-                  <span className="text-[9px] font-mono font-bold uppercase tracking-[0.2em] text-accent">Section 07 / Communication</span>
-                  <h3 className="text-xl md:text-2xl font-serif font-medium text-ink mt-1">Contact & Support</h3>
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#5F8E8D]">Section 07 / Communication</span>
+                  <h3 className="text-xl md:text-2xl font-serif font-normal text-[#1E1E1E] mt-1">Contact & Support</h3>
                 </div>
               </div>
-              <div className="space-y-6 text-sm text-ink-muted leading-relaxed font-sans pl-1">
-                <p>For inquiries, account-related questions, refund requests, or support assistance:</p>
+              <div className="space-y-6 text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.8] font-sans font-normal pl-1">
+                <p>For general inquiries, account-related questions, refund requests, or support assistance, clients may contact our team through the following official channels:</p>
                 
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="p-5 bg-sand/30 hover:bg-sand/50 rounded-xl border border-ink/5 transition-all duration-300 flex flex-col gap-1">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-ink-muted/80">General Inquiries</span>
-                    <a href="mailto:Contact@cardibuy.com" className="text-sm font-semibold text-accent hover:underline font-mono">
+                  <div className="p-5 bg-[#5F8E8D]/5 rounded-xl border border-[#DDE4E1] flex flex-col gap-1 hover:shadow-sm transition-all duration-300">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#5F8E8D]">Inquiries:</span>
+                    <a href="mailto:Contact@cardibuy.com" className="text-sm sm:text-base font-semibold text-[#1E1E1E] hover:text-[#5F8E8D] font-mono transition-colors">
                       Contact@cardibuy.com
                     </a>
                   </div>
-                  <div className="p-5 bg-sand/30 hover:bg-sand/50 rounded-xl border border-ink/5 transition-all duration-300 flex flex-col gap-1">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-ink-muted/80">Support Access</span>
-                    <a href="mailto:Support@cardibuy.com" className="text-sm font-semibold text-accent hover:underline font-mono">
+                  <div className="p-5 bg-[#5F8E8D]/5 rounded-xl border border-[#DDE4E1] flex flex-col gap-1 hover:shadow-sm transition-all duration-300">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#5F8E8D]">Support:</span>
+                    <a href="mailto:Support@cardibuy.com" className="text-sm sm:text-base font-semibold text-[#1E1E1E] hover:text-[#5F8E8D] font-mono transition-colors">
                       Support@cardibuy.com
                     </a>
                   </div>
                 </div>
 
-                <p>Support requests are reviewed during normal business operations. Response times may vary depending on request volume, verification requirements, and operational availability.</p>
+                <p>Support requests are reviewed during regular business operations, and response times may vary depending on request volume, verification requirements, and operational availability.</p>
               </div>
             </motion.div>
 
           </div>
         </div>
         
-        <div className="mt-20 p-12 glass-card border-dashed border-accent/20 text-center bg-white/40">
-          <p className="text-sm md:text-base font-serif italic text-ink-muted max-w-3xl mx-auto leading-relaxed">
+        <div className="mt-20 p-12 rounded-[20px] border border-dashed border-[#5F8E8D]/30 text-center bg-white">
+          <p className="text-sm md:text-base font-serif italic text-[#4A4A4A] max-w-3xl mx-auto leading-relaxed">
             "Cardibuy is committed to maintaining the highest ethical standards and total compliance in all advisory engagements. Our goal is to provide clarity, structure, and actionable insights that drive sustainable progress."
           </p>
-          <p className="mt-4 text-[10px] font-bold uppercase tracking-widest text-accent">Professional Standards & Compliance Team</p>
+          <p className="mt-4 text-[10px] font-bold uppercase tracking-widest text-[#5F8E8D]">Professional Standards & Compliance Team</p>
         </div>
       </div>
     </section>
