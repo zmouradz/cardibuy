@@ -522,42 +522,42 @@ const Policies = () => {
   const handleScrollToSec = (secId: string) => {
     const element = document.getElementById(secId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
   return (
-    <section id="policies" className="section-padding bg-[#F9FBFB] overflow-hidden relative border-t border-[#DDE4E1] font-sans pb-32">
+    <section id="policies" className="w-full max-w-full overflow-x-hidden bg-[#F9FBFB] relative border-t border-[#DDE4E1] font-sans pt-16 pb-32 md:pt-24 px-4 sm:px-6 md:px-12 lg:px-24 box-border">
       <div className="absolute inset-0 bg-[#5F8E8D]/2 -z-10" />
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-20 animate-fade-in">
+      <div className="w-full max-w-7xl mx-auto">
+        <div className="text-center mb-16 md:mb-20 animate-fade-in w-full max-w-full">
           <span className="text-[#5F8E8D] text-[10px] font-bold uppercase tracking-[0.4em] block mb-5">Corporate Standards</span>
-          <h2 className="text-3xl md:text-5xl font-serif font-normal text-[#1E1E1E] leading-tight tracking-tight">Policies & Compliance</h2>
+          <h2 className="text-3xl md:text-5xl font-serif font-normal text-[#1E1E1E] leading-tight tracking-tight [overflow-wrap:break-word] [word-break:break-word] whitespace-normal">Policies & Compliance</h2>
           <div className="h-px bg-[#5F8E8D]/30 mt-8 w-16 mx-auto mb-6" />
-          <p className="text-[16px] text-[#4A4A4A] max-w-2xl mx-auto leading-[1.8] font-sans font-normal">
+          <p className="text-[16px] text-[#4A4A4A] max-w-2xl mx-auto leading-[1.8] font-sans font-normal [overflow-wrap:break-word] [word-break:break-word] whitespace-normal">
             Cardibuy operates under strict professional standards and transparent protocols to guide and support your personal and professional journey.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-12 items-start">
+        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-12 items-start w-full max-w-full min-w-0">
           {/* LEFT SIDEBAR CONTROLS */}
-          <div className="lg:col-span-4 lg:sticky lg:top-28 space-y-6">
-            {/* Mobile / Tablet Horizontal Navigation Scrollbar */}
-            <div className="lg:hidden flex gap-2 overflow-x-auto pb-4 mb-4 -mx-6 px-6 scrollbar-none border-b border-[#DDE4E1]/50">
+          <div className="w-full lg:col-span-4 lg:sticky lg:top-28 space-y-6 static md:static">
+            {/* Mobile / Tablet Vertical Navigation List */}
+            <div className="lg:hidden flex flex-col gap-3 pb-4 mb-4 w-full overflow-visible border-b border-[#DDE4E1]/50">
               {policyLinks.map((link) => (
                 <button
                   key={link.id}
                   onClick={() => handleScrollToSec(link.id)}
-                  className="whitespace-nowrap flex items-center gap-2 py-2.5 px-4 rounded-full border border-[#DDE4E1] bg-white text-[11px] text-[#4A4A4A] hover:text-[#5F8E8D] hover:border-[#5F8E8D]/40 font-semibold transition-all duration-300 shrink-0 shadow-sm"
+                  className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-full border border-[#DDE4E1] bg-white text-[11px] text-[#4A4A4A] hover:text-[#5F8E8D] hover:border-[#5F8E8D]/40 font-semibold transition-all duration-300 shadow-sm w-full max-w-full text-center"
                 >
                   <span className="font-mono text-[9px] text-[#5F8E8D]/60 font-semibold">{link.secNum}</span>
-                  <span>{link.label}</span>
+                  <span className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal text-center">{link.label}</span>
                 </button>
               ))}
             </div>
 
             {/* Desktop Table of Contents */}
-            <div className="hidden lg:flex flex-col gap-1 p-6 bg-white border border-[#DDE4E1] rounded-[20px] shadow-sm">
+            <div className="hidden lg:flex flex-col gap-1 p-6 bg-white border border-[#DDE4E1] rounded-[20px] shadow-sm w-full">
               <p className="text-[10px] font-bold text-[#5F8E8D] uppercase tracking-[0.2em] mb-4 pl-3">On This Page</p>
               {policyLinks.map((link) => (
                 <button
@@ -572,11 +572,11 @@ const Policies = () => {
             </div>
 
             {/* Merchants and compliance indicators card */}
-            <div className="p-6 md:p-8 bg-white border border-[#DDE4E1] rounded-[20px] shadow-sm flex flex-col gap-6">
+            <div className="p-5 md:p-6 lg:p-8 bg-white border border-[#DDE4E1] rounded-[20px] shadow-sm flex flex-col gap-6 box-border w-full max-w-full">
               <div>
                 <span className="text-[10px] uppercase tracking-widest text-[#5F8E8D] font-bold block mb-2">Compliance Review</span>
                 <h3 className="text-xl font-serif text-[#1E1E1E] font-normal leading-snug">Merchant & User Transparency</h3>
-                <p className="text-xs text-[#4A4A4A] leading-relaxed mt-3 font-sans">
+                <p className="text-xs text-[#4A4A4A] leading-relaxed mt-3 font-sans [overflow-wrap:anywhere] [word-break:normal]">
                   Our comprehensive policies are structured to fulfill the compliance requirements of global payment partners, merchant processors, and financial institutions.
                 </p>
               </div>
@@ -585,7 +585,7 @@ const Policies = () => {
 
               <div className="space-y-4">
                 <span className="text-[10px] font-bold text-[#5F8E8D] uppercase tracking-wider block mb-1">Key Specifications</span>
-                <div className="grid grid-cols-2 gap-3 text-[11px] leading-snug">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[11px] leading-snug">
                   <div className="p-3 bg-[#5F8E8D]/5 rounded-xl border border-[#DDE4E1]/30 space-y-1">
                     <span className="text-[#4A4A4A]/80 block text-[9px] uppercase tracking-wider font-semibold font-sans">Refund Window</span>
                     <span className="text-[#5F8E8D] font-semibold block font-sans">120 Days Limit</span>
@@ -620,7 +620,7 @@ const Policies = () => {
           </div>
 
           {/* MAIN COMPLIANCE CONTENT CARDS */}
-          <div className="lg:col-span-8 space-y-8">
+          <div className="lg:col-span-8 space-y-8 w-full max-w-full">
             
             {/* SECTION 1: Purpose & Scope */}
             <motion.div 
@@ -628,7 +628,7 @@ const Policies = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-8 md:p-10 rounded-[20px] border border-[#DDE4E1] bg-white shadow-sm relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300 animate-fade-in"
+              className="scroll-mt-28 p-[18px] sm:p-[28px] lg:p-10 rounded-[18px] sm:rounded-[20px] border border-[#DDE4E1] bg-white shadow-sm relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300 animate-fade-in w-full max-w-full box-border [overflow-wrap:break-word] [word-break:break-word] whitespace-normal"
             >
               <div className="absolute top-0 left-0 w-1.5 h-full bg-[#5F8E8D]" />
               <div className="flex items-start gap-4">
@@ -637,16 +637,16 @@ const Policies = () => {
                 </div>
                 <div>
                   <span className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#5F8E8D]">Section 01 / Purpose & Scope</span>
-                  <h3 className="text-xl md:text-2xl font-serif font-normal text-[#1E1E1E] mt-1">CARDIBUY LTD – Website Policies & Service Information</h3>
+                  <h3 className="text-xl md:text-2xl font-serif font-normal text-[#1E1E1E] mt-1 [overflow-wrap:break-word] [word-break:break-word] whitespace-normal">CARDIBUY LTD – Website Policies & Service Information</h3>
                 </div>
               </div>
               
               <div className="space-y-4 text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.8] font-sans font-normal pl-1">
-                <div className="border-l-2 border-[#5F8E8D] pl-4 italic text-[#5F8E8D] font-serif text-[17px] sm:text-[18px] leading-relaxed my-2">
+                <div className="border-l-2 border-[#5F8E8D] pl-4 italic text-[#5F8E8D] font-serif text-[17px] sm:text-[18px] leading-relaxed my-2 [overflow-wrap:break-word] [word-break:break-word] whitespace-normal">
                   Providing Structured Guidance to Support Personal Growth
                 </div>
-                <p>Cardibuy provides digital guidance and consultation services focused on personal development, relationship guidance, emotional support, and lifestyle insight. Our services are designed to provide structured one-on-one conversations, supportive guidance, and practical perspectives tailored to each client’s personal journey.</p>
-                <p>All services are provided for informational and self-development purposes only and should not be considered medical, legal, financial, or psychological advice. We do not guarantee specific outcomes or results from the use of our services.</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">Cardibuy provides digital guidance and consultation services focused on personal development, relationship guidance, emotional support, and lifestyle insight. Our services are designed to provide structured one-on-one conversations, supportive guidance, and practical perspectives tailored to each client’s personal journey.</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">All services are provided for informational and self-development purposes only and should not be considered medical, legal, financial, or psychological advice. We do not guarantee specific outcomes or results from the use of our services.</p>
               </div>
             </motion.div>
 
@@ -656,7 +656,7 @@ const Policies = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-8 md:p-10 rounded-[20px] border border-[#DDE4E1] bg-white shadow-sm relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300"
+              className="scroll-mt-28 p-[18px] sm:p-[28px] lg:p-10 rounded-[18px] sm:rounded-[20px] border border-[#DDE4E1] bg-white shadow-sm relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300 w-full max-w-full box-border [overflow-wrap:break-word] [word-break:break-word] whitespace-normal"
             >
               <div className="absolute top-0 left-0 w-1.5 h-full bg-[#5F8E8D]" />
               <div className="flex items-start gap-4">
@@ -665,11 +665,11 @@ const Policies = () => {
                 </div>
                 <div>
                   <span className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#5F8E8D]">Section 02 / Disclaimers</span>
-                  <h3 className="text-xl md:text-2xl font-serif font-normal text-[#1E1E1E] mt-1">Outcome Disclaimer</h3>
+                  <h3 className="text-xl md:text-2xl font-serif font-normal text-[#1E1E1E] mt-1 [overflow-wrap:break-word] [word-break:break-word] whitespace-normal">Outcome Disclaimer</h3>
                 </div>
               </div>
               <div className="space-y-4 text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.8] font-sans font-normal pl-1">
-                <p>Outcome Disclaimer: All services are delivered as professional guidance and consultation services. We do not guarantee specific outcomes or results, as outcomes may vary depending on individual circumstances, personal commitment, communication, and external factors beyond our reasonable control.</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">Outcome Disclaimer: All services are delivered as professional guidance and consultation services. We do not guarantee specific outcomes or results, as outcomes may vary depending on individual circumstances, personal commitment, communication, and external factors beyond our reasonable control.</p>
               </div>
             </motion.div>
 
@@ -679,7 +679,7 @@ const Policies = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-8 md:p-10 rounded-[20px] border border-[#DDE4E1] bg-white shadow-sm relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300"
+              className="scroll-mt-28 p-[18px] sm:p-[28px] lg:p-10 rounded-[18px] sm:rounded-[20px] border border-[#DDE4E1] bg-white shadow-sm relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300 w-full max-w-full box-border [overflow-wrap:break-word] [word-break:break-word] whitespace-normal"
             >
               <div className="absolute top-0 left-0 w-1.5 h-full bg-[#5F8E8D]" />
               <div className="flex items-start gap-4">
@@ -688,11 +688,11 @@ const Policies = () => {
                 </div>
                 <div>
                   <span className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#5F8E8D]">Section 03 / Audience</span>
-                  <h3 className="text-xl md:text-2xl font-serif font-normal text-[#1E1E1E] mt-1">Who We Support</h3>
+                  <h3 className="text-xl md:text-2xl font-serif font-normal text-[#1E1E1E] mt-1 [overflow-wrap:break-word] [word-break:break-word] whitespace-normal">Who We Support</h3>
                 </div>
               </div>
               <div className="space-y-4 text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.8] font-sans font-normal pl-1">
-                <p>We support individuals seeking clarity in personal matters, relationship guidance, emotional support, and personal development. Our services are designed to provide structured conversations, practical insight, and supportive guidance tailored to each client’s personal journey.</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">We support individuals seeking clarity in personal matters, relationship guidance, emotional support, and personal development. Our services are designed to provide structured conversations, practical insight, and supportive guidance tailored to each client’s personal journey.</p>
               </div>
             </motion.div>
 
@@ -702,7 +702,7 @@ const Policies = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-8 md:p-10 rounded-[20px] border border-[#DDE4E1] bg-white shadow-sm relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300"
+              className="scroll-mt-28 p-[18px] sm:p-[28px] lg:p-10 rounded-[18px] sm:rounded-[20px] border border-[#DDE4E1] bg-white shadow-sm relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300 w-full max-w-full box-border [overflow-wrap:break-word] [word-break:break-word] whitespace-normal"
             >
               <div className="absolute top-0 left-0 w-1.5 h-full bg-[#5F8E8D]" />
               <div className="flex items-start gap-4">
@@ -711,15 +711,15 @@ const Policies = () => {
                 </div>
                 <div>
                   <span className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#5F8E8D]">Section 04 / Cancellation</span>
-                  <h3 className="text-xl md:text-2xl font-serif font-normal text-[#1E1E1E] mt-1">Refund & Cancellation Policy</h3>
+                  <h3 className="text-xl md:text-2xl font-serif font-normal text-[#1E1E1E] mt-1 [overflow-wrap:break-word] [word-break:break-word] whitespace-normal">Refund & Cancellation Policy</h3>
                 </div>
               </div>
               <div className="space-y-6 text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.8] font-sans font-normal pl-1">
-                <p>At Cardibuy, we are committed to maintaining a fair, transparent, and secure experience for all clients using our digital guidance and consultation services.</p>
-                <p>Clients may submit a refund request within 120 days from the original payment date. Refund requests submitted after 120 days from the payment confirmation date are generally not eligible for review or refund consideration due to service completion timelines, operational limitations, record retention policies, and payment processing regulations.</p>
-                <p>All refund requests are reviewed individually on a case-by-case basis and are not automatically approved. To help us investigate and process a request, clients may be asked to provide:</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">At Cardibuy, we are committed to maintaining a fair, transparent, and secure experience for all clients using our digital guidance and consultation services.</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">Clients may submit a refund request within 120 days from the original payment date. Refund requests submitted after 120 days from the payment confirmation date are generally not eligible for review or refund consideration due to service completion timelines, operational limitations, record retention policies, and payment processing regulations.</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">All refund requests are reviewed individually on a case-by-case basis and are not automatically approved. To help us investigate and process a request, clients may be asked to provide:</p>
                 
-                <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3 pl-1">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 pl-1">
                   {[
                     "Full name",
                     "Email address",
@@ -730,15 +730,15 @@ const Policies = () => {
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2.5 text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.6]">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#5F8E8D]/80 shrink-0 mt-2.5" />
-                      <span>{item}</span>
+                      <span className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">{item}</span>
                     </li>
                   ))}
                 </ul>
 
-                <p>For security and verification purposes, clients may also be asked to confirm their payment information, email address, and phone number following a completed transaction.</p>
-                <p>Refund requests may be considered in situations involving:</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">For security and verification purposes, clients may also be asked to confirm their payment information, email address, and phone number following a completed transaction.</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">Refund requests may be considered in situations involving:</p>
 
-                <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3 pl-1">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 pl-1">
                   {[
                     "Duplicate transactions",
                     "Unauthorized charges",
@@ -748,15 +748,15 @@ const Policies = () => {
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2.5 text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.6]">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#5F8E8D]/80 shrink-0 mt-2.5" />
-                      <span>{item}</span>
+                      <span className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">{item}</span>
                     </li>
                   ))}
                 </ul>
 
-                <p>Due to the nature of digital consultation and guidance services, refunds are generally not provided once a service has been delivered, initiated, completed, or confirmed by the client as satisfactory.</p>
-                <p>Cardibuy reserves the right to deny refund requests in cases where there is evidence of:</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">Due to the nature of digital consultation and guidance services, refunds are generally not provided once a service has been delivered, initiated, completed, or confirmed by the client as satisfactory.</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">Cardibuy reserves the right to deny refund requests in cases where there is evidence of:</p>
 
-                <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3 pl-1">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 pl-1">
                   {[
                     "Service usage or completed delivery",
                     "Client confirmation of satisfaction with the service",
@@ -766,13 +766,13 @@ const Policies = () => {
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2.5 text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.6]">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#5F8E8D]/80 shrink-0 mt-2.5" />
-                      <span>{item}</span>
+                      <span className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">{item}</span>
                     </li>
                   ))}
                 </ul>
 
-                <p>Clients are encouraged to contact our support team directly before initiating a payment dispute or chargeback so that we may review the matter and attempt to provide an appropriate resolution.</p>
-                <p>By purchasing our services, clients acknowledge and agree to this Refund & Cancellation Policy.</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">Clients are encouraged to contact our support team directly before initiating a payment dispute or chargeback so that we may review the matter and attempt to provide an appropriate resolution.</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">By purchasing our services, clients acknowledge and agree to this Refund & Cancellation Policy.</p>
               </div>
             </motion.div>
 
@@ -782,7 +782,7 @@ const Policies = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-8 md:p-10 rounded-[20px] border border-[#DDE4E1] bg-white shadow-sm relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300"
+              className="scroll-mt-28 p-[18px] sm:p-[28px] lg:p-10 rounded-[18px] sm:rounded-[20px] border border-[#DDE4E1] bg-white shadow-sm relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300 w-full max-w-full box-border [overflow-wrap:break-word] [word-break:break-word] whitespace-normal"
             >
               <div className="absolute top-0 left-0 w-1.5 h-full bg-[#5F8E8D]" />
               <div className="flex items-start gap-4">
@@ -791,17 +791,17 @@ const Policies = () => {
                 </div>
                 <div>
                   <span className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#5F8E8D]">Section 05 / Logistics</span>
-                  <h3 className="text-xl md:text-2xl font-serif font-normal text-[#1E1E1E] mt-1">Service Delivery Policy</h3>
+                  <h3 className="text-xl md:text-2xl font-serif font-normal text-[#1E1E1E] mt-1 [overflow-wrap:break-word] [word-break:break-word] whitespace-normal">Service Delivery Policy</h3>
                 </div>
               </div>
               <div className="space-y-6 text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.8] font-sans font-normal pl-1">
-                <p>Cardibuy provides digital guidance and consultation services through secure online communication platforms and, where applicable, through scheduled service arrangements.</p>
-                <p>Following a successful payment, clients may be contacted to confirm their booking details, email address, phone number, preferred communication method, and service information before the consultation is scheduled or delivered.</p>
-                <p>Service delivery timelines may vary depending on scheduling availability, client responsiveness, time zone differences, technical factors, or the nature of the requested service. Clients are responsible for providing accurate contact information and responding to scheduling or verification requests in a timely manner.</p>
-                <p>All services provided by Cardibuy are intended for informational and personal development purposes only. Our guidance, perspectives, and support services should not be interpreted as medical, legal, financial, psychological, or crisis-related advice. Clients remain fully responsible for their personal choices, actions, interpretations, and outcomes following the use of our services.</p>
-                <p>Cardibuy does not guarantee specific personal, emotional, relationship, or life outcomes resulting from any consultation, guidance session, or support service.</p>
-                <p>Due to the nature of digital consultation services, a service may be considered delivered once a session has started, communication has been initiated, guidance has been provided, digital content has been shared, or the client has participated in the scheduled consultation.</p>
-                <p>Clients are expected to communicate respectfully and professionally during all interactions with our team. Cardibuy reserves the right to refuse, suspend, or terminate services in cases involving abusive behavior, harassment, fraudulent activity, repeated payment disputes, or violations of our policies.</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">Cardibuy provides digital guidance and consultation services through secure online communication platforms and, where applicable, through scheduled service arrangements.</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">Following a successful payment, clients may be contacted to confirm their booking details, email address, phone number, preferred communication method, and service information before the consultation is scheduled or delivered.</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">Service delivery timelines may vary depending on scheduling availability, client responsiveness, time zone differences, technical factors, or the nature of the requested service. Clients are responsible for providing accurate contact information and responding to scheduling or verification requests in a timely manner.</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">All services provided by Cardibuy are intended for informational and personal development purposes only. Our guidance, perspectives, and support services should not be interpreted as medical, legal, financial, psychological, or crisis-related advice. Clients remain fully responsible for their personal choices, actions, interpretations, and outcomes following the use of our services.</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">Cardibuy does not guarantee specific personal, emotional, relationship, or life outcomes resulting from any consultation, guidance session, or support service.</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">Due to the nature of digital consultation services, a service may be considered delivered once a session has started, communication has been initiated, guidance has been provided, digital content has been shared, or the client has participated in the scheduled consultation.</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">Clients are expected to communicate respectfully and professionally during all interactions with our team. Cardibuy reserves the right to refuse, suspend, or terminate services in cases involving abusive behavior, harassment, fraudulent activity, repeated payment disputes, or violations of our policies.</p>
               </div>
             </motion.div>
 
@@ -811,7 +811,7 @@ const Policies = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-8 md:p-10 rounded-[20px] border border-[#DDE4E1] bg-white shadow-sm relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300"
+              className="scroll-mt-28 p-[18px] sm:p-[28px] lg:p-10 rounded-[18px] sm:rounded-[20px] border border-[#DDE4E1] bg-white shadow-sm relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300 w-full max-w-full box-border [overflow-wrap:break-word] [word-break:break-word] whitespace-normal"
             >
               <div className="absolute top-0 left-0 w-1.5 h-full bg-[#5F8E8D]" />
               <div className="flex items-start gap-4">
@@ -820,22 +820,22 @@ const Policies = () => {
                 </div>
                 <div>
                   <span className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#5F8E8D]">Section 06 / Privacy</span>
-                  <h3 className="text-xl md:text-2xl font-serif font-normal text-[#1E1E1E] mt-1">Confidentiality, Privacy & Client Safety</h3>
+                  <h3 className="text-xl md:text-2xl font-serif font-normal text-[#1E1E1E] mt-1 [overflow-wrap:break-word] [word-break:break-word] whitespace-normal">Confidentiality, Privacy & Client Safety</h3>
                 </div>
               </div>
               <div className="space-y-6 text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.8] font-sans font-normal pl-1">
-                <p>Cardibuy takes reasonable measures to protect client information and private communications. By using our services, clients acknowledge and agree that communications and service-related interactions may occur through third-party digital platforms, email services, messaging systems, or other online communication tools that are outside of Cardibuy’s direct control.</p>
-                <p>While we make reasonable efforts to maintain privacy and data security, Cardibuy cannot guarantee absolute protection against technical failures, unauthorized access, cyber incidents, or third-party platform vulnerabilities.</p>
-                <p>For security, compliance, quality assurance, dispute resolution, fraud prevention, and operational purposes, certain communications, scheduling details, payment confirmations, and service-related records may be retained in accordance with applicable legal and operational requirements.</p>
-                <p>Clients must be at least 18 years of age or the legal age of majority in their jurisdiction to purchase or use Cardibuy services. By accessing, booking, or using our services, clients confirm that they meet the applicable legal age requirements and are legally authorized to enter into binding agreements and complete online payments.</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">Cardibuy takes reasonable measures to protect client information and private communications. By using our services, clients acknowledge and agree that communications and service-related interactions may occur through third-party digital platforms, email services, messaging systems, or other online communication tools that are outside of Cardibuy’s direct control.</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">While we make reasonable efforts to maintain privacy and data security, Cardibuy cannot guarantee absolute protection against technical failures, unauthorized access, cyber incidents, or third-party platform vulnerabilities.</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">For security, compliance, quality assurance, dispute resolution, fraud prevention, and operational purposes, certain communications, scheduling details, payment confirmations, and service-related records may be retained in accordance with applicable legal and operational requirements.</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">Clients must be at least 18 years of age or the legal age of majority in their jurisdiction to purchase or use Cardibuy services. By accessing, booking, or using our services, clients confirm that they meet the applicable legal age requirements and are legally authorized to enter into binding agreements and complete online payments.</p>
                 
-                <div className="border border-[#DDE4E1] bg-[#5F8E8D]/5 p-6 rounded-[16px] flex items-start gap-4">
+                <div className="border border-[#DDE4E1] bg-[#5F8E8D]/5 p-5 md:p-6 rounded-[16px] flex items-start gap-4 box-border w-full max-w-full">
                   <ShieldCheck className="w-5 h-5 text-[#5F8E8D] shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-semibold text-[#1E1E1E] block mb-2 text-sm uppercase tracking-wider font-sans">
+                    <span className="font-semibold text-[#1E1E1E] block mb-2 text-sm uppercase tracking-wider font-sans [overflow-wrap:break-word] [word-break:break-word] whitespace-normal">
                       Critical Boundary Notice — No Crisis Support
                     </span>
-                    <p className="text-[#4A4A4A] text-xs leading-relaxed font-sans">
+                    <p className="text-[#4A4A4A] text-xs leading-relaxed font-sans [overflow-wrap:break-word] [word-break:break-word] whitespace-normal">
                       Our services are not intended for crisis intervention, emergency situations, or licensed medical or psychological treatment services. Clients experiencing serious medical, psychological, or emergency situations should seek assistance from qualified professionals or appropriate local services.
                     </p>
                   </div>
@@ -849,7 +849,7 @@ const Policies = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-8 md:p-10 rounded-[20px] border border-[#DDE4E1] bg-white shadow-sm relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300"
+              className="scroll-mt-28 p-[18px] sm:p-[28px] lg:p-10 rounded-[18px] sm:rounded-[20px] border border-[#DDE4E1] bg-white shadow-sm relative overflow-hidden flex flex-col gap-6 hover:shadow-md transition-all duration-300 w-full max-w-full box-border [overflow-wrap:break-word] [word-break:break-word] whitespace-normal"
             >
               <div className="absolute top-0 left-0 w-1.5 h-full bg-[#5F8E8D]" />
               <div className="flex items-start gap-4">
@@ -858,36 +858,36 @@ const Policies = () => {
                 </div>
                 <div>
                   <span className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#5F8E8D]">Section 07 / Communication</span>
-                  <h3 className="text-xl md:text-2xl font-serif font-normal text-[#1E1E1E] mt-1">Contact & Support</h3>
+                  <h3 className="text-xl md:text-2xl font-serif font-normal text-[#1E1E1E] mt-1 [overflow-wrap:break-word] [word-break:break-word] whitespace-normal">Contact & Support</h3>
                 </div>
               </div>
               <div className="space-y-6 text-[15px] sm:text-[16px] text-[#4A4A4A] leading-[1.8] font-sans font-normal pl-1">
-                <p>For general inquiries, account-related questions, refund requests, or support assistance, clients may contact our team through the following official channels:</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">For general inquiries, account-related questions, refund requests, or support assistance, clients may contact our team through the following official channels:</p>
                 
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="p-5 bg-[#5F8E8D]/5 rounded-xl border border-[#DDE4E1] flex flex-col gap-1 hover:shadow-sm transition-all duration-300">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+                  <div className="p-5 bg-[#5F8E8D]/5 rounded-xl border border-[#DDE4E1] flex flex-col gap-1 hover:shadow-sm transition-all duration-300 box-border w-full">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#5F8E8D]">Inquiries:</span>
-                    <a href="mailto:Contact@cardibuy.com" className="text-sm sm:text-base font-semibold text-[#1E1E1E] hover:text-[#5F8E8D] font-mono transition-colors">
+                    <a href="mailto:Contact@cardibuy.com" className="text-sm sm:text-base font-semibold text-[#1E1E1E] hover:text-[#5F8E8D] font-mono transition-colors break-words [overflow-wrap:break-word] [word-break:break-word] whitespace-normal">
                       Contact@cardibuy.com
                     </a>
                   </div>
-                  <div className="p-5 bg-[#5F8E8D]/5 rounded-xl border border-[#DDE4E1] flex flex-col gap-1 hover:shadow-sm transition-all duration-300">
+                  <div className="p-5 bg-[#5F8E8D]/5 rounded-xl border border-[#DDE4E1] flex flex-col gap-1 hover:shadow-sm transition-all duration-300 box-border w-full">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#5F8E8D]">Support:</span>
-                    <a href="mailto:Support@cardibuy.com" className="text-sm sm:text-base font-semibold text-[#1E1E1E] hover:text-[#5F8E8D] font-mono transition-colors">
+                    <a href="mailto:Support@cardibuy.com" className="text-sm sm:text-base font-semibold text-[#1E1E1E] hover:text-[#5F8E8D] font-mono transition-colors break-words [overflow-wrap:break-word] [word-break:break-word] whitespace-normal">
                       Support@cardibuy.com
                     </a>
                   </div>
                 </div>
 
-                <p>Support requests are reviewed during regular business operations, and response times may vary depending on request volume, verification requirements, and operational availability.</p>
+                <p className="[overflow-wrap:break-word] [word-break:break-word] whitespace-normal">Support requests are reviewed during regular business operations, and response times may vary depending on request volume, verification requirements, and operational availability.</p>
               </div>
             </motion.div>
 
           </div>
         </div>
         
-        <div className="mt-20 p-12 rounded-[20px] border border-dashed border-[#5F8E8D]/30 text-center bg-white">
-          <p className="text-sm md:text-base font-serif italic text-[#4A4A4A] max-w-3xl mx-auto leading-relaxed">
+        <div className="mt-20 p-6 md:p-8 lg:p-12 rounded-[18px] sm:rounded-[20px] border border-dashed border-[#5F8E8D]/30 text-center bg-white w-full max-w-full box-border [overflow-wrap:break-word] [word-break:break-word] whitespace-normal">
+          <p className="text-sm md:text-base font-serif italic text-[#4A4A4A] max-w-3xl mx-auto leading-relaxed [overflow-wrap:break-word] [word-break:break-word] whitespace-normal">
             "Cardibuy is committed to maintaining the highest ethical standards and total compliance in all advisory engagements. Our goal is to provide clarity, structure, and actionable insights that drive sustainable progress."
           </p>
           <p className="mt-4 text-[10px] font-bold uppercase tracking-widest text-[#5F8E8D]">Professional Standards & Compliance Team</p>
