@@ -30,7 +30,8 @@ import {
   Zap,
   Star,
   Phone,
-  MapPin
+  MapPin,
+  FileText
 } from 'lucide-react';
 
 import TermsAndConditions from './components/TermsAndConditions';
@@ -625,7 +626,7 @@ const Footer = ({ currentPath = '/', navigateTo }: { currentPath?: string; navig
 
   return (
     <footer className="py-20 px-6 sm:px-10 md:px-16 border-t border-[#DDE4E1] bg-white font-sans text-sm text-[#4A4A4A] relative overflow-hidden box-border">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
         
         {/* COLUMN 1: Brand Info */}
         <div className="space-y-4">
@@ -654,9 +655,9 @@ const Footer = ({ currentPath = '/', navigateTo }: { currentPath?: string; navig
           </div>
         </div>
 
-        {/* COLUMN 3: Contact & Legal */}
+        {/* COLUMN 3: Contact & Information */}
         <div className="space-y-4">
-          <h4 className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#5F8E8D]">Contact & Legal</h4>
+          <h4 className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#5F8E8D]">Contact & Information</h4>
           <div className="space-y-3 text-[14px] text-[#4A4A4A] leading-relaxed">
             <p className="flex flex-col">
               <span className="font-semibold text-[#1E1E1E]">Telephone</span>
@@ -667,14 +668,53 @@ const Footer = ({ currentPath = '/', navigateTo }: { currentPath?: string; navig
               <a href="mailto:Contact@cardibuy.com" className="text-[#5F8E8D] hover:text-[#4E7675] font-semibold transition-colors duration-200">Contact@cardibuy.com</a>
             </p>
           </div>
-          
-          <div className="pt-4 border-t border-[#DDE4E1]/60">
-            <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#5F8E8D] block mb-2">Links</span>
-            <div className="flex flex-col gap-2 text-[13px] font-semibold text-[#5F8E8D]">
-              <a href="/terms-and-conditions" onClick={(e) => handleLinkClick(e, '/terms-and-conditions')} className="hover:underline hover:text-[#4E7675] cursor-pointer transition-colors">Terms & Conditions</a>
-              <a href="/privacy-policy" onClick={(e) => handleLinkClick(e, '/privacy-policy')} className="hover:underline hover:text-[#4E7675] cursor-pointer transition-colors">Privacy Policy</a>
-              <a href="/refund-policy" onClick={(e) => handleLinkClick(e, '/refund-policy')} className="hover:underline hover:text-[#4E7675] cursor-pointer transition-colors">Refund Policy</a>
-            </div>
+        </div>
+
+        {/* COLUMN 4: Legal Documents */}
+        <div className="space-y-4">
+          <h4 className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#5F8E8D]">Legal Documents</h4>
+          <div className="grid grid-cols-1 gap-3">
+            <a 
+              href="/terms-and-conditions" 
+              onClick={(e) => handleLinkClick(e, '/terms-and-conditions')}
+              className="p-4 bg-slate-50 hover:bg-[#5F8E8D]/10 border border-[#DDE4E1] rounded-xl flex items-center gap-3 transition-all duration-300 group cursor-pointer"
+            >
+              <div className="w-8 h-8 rounded-full bg-[#5F8E8D]/10 flex items-center justify-center text-[#5F8E8D] group-hover:bg-[#5F8E8D] group-hover:text-white transition-all">
+                <Scale className="w-4 h-4" />
+              </div>
+              <div>
+                <span className="text-xs font-semibold text-[#1E1E1E] block">Terms & Conditions</span>
+                <span className="text-[10px] text-[#4A4A4A]/60 block mt-0.5">Governing Rules</span>
+              </div>
+            </a>
+
+            <a 
+              href="/privacy-policy" 
+              onClick={(e) => handleLinkClick(e, '/privacy-policy')}
+              className="p-4 bg-slate-50 hover:bg-[#5F8E8D]/10 border border-[#DDE4E1] rounded-xl flex items-center gap-3 transition-all duration-300 group cursor-pointer"
+            >
+              <div className="w-8 h-8 rounded-full bg-[#5F8E8D]/10 flex items-center justify-center text-[#5F8E8D] group-hover:bg-[#5F8E8D] group-hover:text-white transition-all">
+                <Shield className="w-4 h-4" />
+              </div>
+              <div>
+                <span className="text-xs font-semibold text-[#1E1E1E] block">Privacy Policy</span>
+                <span className="text-[10px] text-[#4A4A4A]/60 block mt-0.5">Data Protection</span>
+              </div>
+            </a>
+
+            <a 
+              href="/refund-policy" 
+              onClick={(e) => handleLinkClick(e, '/refund-policy')}
+              className="p-4 bg-slate-50 hover:bg-[#5F8E8D]/10 border border-[#DDE4E1] rounded-xl flex items-center gap-3 transition-all duration-300 group cursor-pointer"
+            >
+              <div className="w-8 h-8 rounded-full bg-[#5F8E8D]/10 flex items-center justify-center text-[#5F8E8D] group-hover:bg-[#5F8E8D] group-hover:text-white transition-all">
+                <FileText className="w-4 h-4" />
+              </div>
+              <div>
+                <span className="text-xs font-semibold text-[#1E1E1E] block">Refund Policy</span>
+                <span className="text-[10px] text-[#4A4A4A]/60 block mt-0.5">Cancellation Terms</span>
+              </div>
+            </a>
           </div>
         </div>
 
