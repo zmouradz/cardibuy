@@ -192,63 +192,92 @@ const Navbar = ({ currentPath = '/', navigateTo }: { currentPath?: string; navig
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${isScrolled ? 'bg-white/90 border-b border-ink/5 py-3' : 'bg-transparent py-6'}`}>
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <a 
-          href="/" 
-          onClick={(e) => { 
-            e.preventDefault(); 
-            if (navigateTo) navigateTo('/'); 
-          }} 
-          className="flex items-center gap-4 group"
-        >
-          <div className="w-10 h-10 rounded-full border border-accent/30 flex items-center justify-center group-hover:border-accent transition-colors duration-500">
-             <span className="text-accent font-serif text-xl font-bold italic">C</span>
-          </div>
-          <span className="font-serif text-xl tracking-tight font-medium text-ink">Cardibuy</span>
-        </a>
-
-        <div className="hidden md:flex items-center gap-12">
-          {navLinks.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href} 
-              onClick={(e) => handleNavLinkClick(e, link)}
-              className="nav-link cursor-pointer"
-            >
-              {link.name}
-            </a>
-          ))}
-          <button onClick={handleExploreClick} className="btn-primary py-2.5 px-6 cursor-pointer">Explore</button>
-        </div>
-
-        <button className="md:hidden text-ink p-2 cursor-pointer" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-          {isMobileMenuOpen ? <X /> : <Menu />}
-        </button>
-      </div>
-
+    <>
+      {/* Background Overlay Backdrop */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div 
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="absolute top-full left-0 right-0 bg-white border-b border-ink/10 p-6 flex flex-col gap-4 md:hidden shadow-xl"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-ink/40 backdrop-blur-xs md:hidden z-40 cursor-pointer"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+        )}
+      </AnimatePresence>
+
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled || isMobileMenuOpen ? 'bg-white border-b border-ink/5 py-3 shadow-sm' : 'bg-transparent py-6'}`}>
+        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+          <a 
+            href="/" 
+            onClick={(e) => { 
+              e.preventDefault(); 
+              setIsMobileMenuOpen(false);
+              if (navigateTo) navigateTo('/'); 
+            }} 
+            className="flex items-center gap-4 group"
           >
+            <div className="w-10 h-10 rounded-full border border-accent/30 flex items-center justify-center group-hover:border-accent transition-colors duration-500">
+               <span className="text-accent font-serif text-xl font-bold italic">C</span>
+            </div>
+            <span className="font-serif text-xl tracking-tight font-medium text-ink">Cardibuy</span>
+          </a>
+
+          <div className="hidden md:flex items-center gap-12">
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
                 href={link.href} 
-                className="text-lg font-medium text-ink hover:text-accent py-2 cursor-pointer"
                 onClick={(e) => handleNavLinkClick(e, link)}
+                className="nav-link cursor-pointer"
               >
                 {link.name}
               </a>
             ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+            <button onClick={handleExploreClick} className="btn-primary py-2.5 px-6 cursor-pointer">Explore</button>
+          </div>
+
+          <button 
+            className="md:hidden text-ink p-2 cursor-pointer relative z-50 min-h-[44px] min-w-[44px] flex items-center justify-center" 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle Menu"
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div 
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.2 }}
+              className="absolute top-full left-0 right-0 bg-white border-b border-ink/10 p-6 flex flex-col gap-2 md:hidden shadow-xl z-50 overflow-hidden"
+            >
+              {navLinks.map((link) => (
+                <a 
+                  key={link.name} 
+                  href={link.href} 
+                  className="text-lg font-medium text-ink hover:text-accent hover:bg-slate-50 px-4 py-3 rounded-lg cursor-pointer transition-all duration-200 flex items-center min-h-[44px] w-full"
+                  onClick={(e) => handleNavLinkClick(e, link)}
+                >
+                  {link.name}
+                </a>
+              ))}
+              <div className="pt-4 border-t border-ink/5 mt-2">
+                <button 
+                  onClick={handleExploreClick} 
+                  className="w-full btn-primary py-3.5 px-6 cursor-pointer text-center flex items-center justify-center min-h-[44px]"
+                >
+                  Explore
+                </button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
+    </>
   );
 };
 
